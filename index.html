@@ -15,9 +15,51 @@
     <!------------------Custom Css-------------------------------->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
+
   <body>
-    <main class="container mt-3">
-      <h1 class="text-center text-success">Calculate Your Money</h1>
+    <main class="container">
+      <header class="container my-5">
+        <h1 class="text-center text-success">Calculate Your Money</h1>
+      </header>
+
+      <div class="row">
+        <!-- image -->
+        <div class="col-md-6">
+          <div class="input-section half-width">
+            <div class="mb-3">
+              <img src="./images/money.jpg" alt="" class="img-fluid" />
+            </div>
+          </div>
+        </div>
+        <!-- calculation -->
+        <div class="col-md-6">
+          <div class="input-section half-width bg-light text-center p-3">
+            <!-- income -->
+            <h3>Income</h3>
+            <p>Income: <input class="mx-3 p-2" type="text" /></p>
+            <!-- expenses -->
+            <h3>Expenses</h3>
+            <p>Food: <input class="mx-3 p-2" type="text" /></p>
+            <p>Rent: <input class="mx-3 p-2" type="text" /></p>
+            <p>Clothes: <input class="mx-3 p-2" type="text" /></p>
+            <button class="btn-primary m-3 py-2 px-5 rounded-3">Calculate</button>
+            <!-- total expense & balance -->
+            <div class="my-3">
+              <h4>Total Expenses: <span>00</span></h4>
+              <h4>Balance: <span></span>00</h4>
+            </div>
+            <!-- saving -->
+            <div class="my-3">
+              <p>
+                Save: <input class="mx-3 p-2 w-25" type="text" /> %
+                <button class="btn-primary m-3 py-2 px-5 rounded-3">Save</button>
+              </p>
+              <h4>Saving Amount: <span>00</span></h4>
+              <h4>Remaining Balance: <span>00</span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>
