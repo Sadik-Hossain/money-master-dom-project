@@ -22,7 +22,7 @@ document.getElementById('calculate').addEventListener('click', function () {
     }
     // string validation
     else if (isNaN(incomeValue) || isNaN(foodValue) || isNaN(rentValue) || isNaN(clothesValue)) {
-        document.getElementById('validation-msg-2').style.display = 'block'
+        document.getElementById('validation-msg-1').style.display = 'block'
 
     }
     // negative number validation
