@@ -12,42 +12,63 @@ document.getElementById('calculate').addEventListener('click', function () {
     let incomeValue = income.value;
     let foodValue = food.value;
     let rentValue = rent.value;
-    const clothesValue = clothes.value;
-    
+    let clothesValue = clothes.value;
+
     //---------------validation----------------------------------
     // empty validation
     if (incomeValue == '' || foodValue == '' || rentValue == '' || clothesValue == '') {
-        alert('please enter a number');
+        document.getElementById('validation-msg-1').style.display = 'block'
 
     }
     // string validation
     else if (isNaN(incomeValue) || isNaN(foodValue) || isNaN(rentValue) || isNaN(clothesValue)) {
-        alert('please enter a number');
+        document.getElementById('validation-msg-2').style.display = 'block'
+
     }
     // negative number validation
     else if (incomeValue < 0 || foodValue < 0 || rentValue < 0 || clothesValue < 0) {
-        alert('please enter a positive number');
-
+        document.getElementById('validation-msg-2').style.display = 'block'
     }
     else {
-        calculation()
+        calculation(incomeValue, foodValue, rentValue, clothesValue)
     }
-    
+
 })
 
-//-----sum--&--subtraction----------------------------------------
-function calculation() {
-    let totalExpensesValue = totalExpenses.innerText;
-    let balanceValue = balance.innerText;
-    // expense calculation
-    totalExpenses.innerText = parseFloat(food.value) + parseFloat(rent.value) + parseFloat(clothes.value);
-if(parseFloat(totalExpensesValue) < parseFloat(balanceValue)){
-    alert('youre broke');
+//-------------------Expense-&-Balance----------------------------------------
+function calculation(income, food, rent, clothes) {
+    // expense updating
+    totalExpenses.innerText = parseFloat(food) + parseFloat(rent) + parseFloat(clothes);
+    //storing expense and balance
+    let currentSpend = parseFloat(totalExpenses.innerText)
+    let currentBalance = parseFloat(income) - currentSpend
+    if (currentBalance >= 0) {
+        //balance updating
+        balance.innerText = parseFloat(income) - parseFloat(totalExpenses.innerText);
+    }
+    else {
+        document.getElementById('validation-msg-3').style.display = 'block'
 
+    }
 }
-    //balance calculation
-   else{
-    balance.innerText = parseFloat(income.value) - parseFloat(totalExpenses.innerText);
+//--------------closeBtn event---------------------------------------------------------------
+document.getElementById('close-1').addEventListener('click', function () {
+    document.getElementById('validation-msg-1').style.display = 'none';
+    income.value = '';
+    food.value = '';
+    rent.value = '';
+    clothes.value = '';
 
-   }
-}
+
+})
+document.getElementById('close-2').addEventListener('click', function () {
+    document.getElementById('validation-msg-2').style.display = 'none';
+    income.value = '';
+    food.value = '';
+    rent.value = '';
+    clothes.value = '';
+})
+document.getElementById('close-3').addEventListener('click', function () {
+    document.getElementById('validation-msg-3').style.display = 'none';
+
+})

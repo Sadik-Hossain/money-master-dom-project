@@ -1,6 +1,10 @@
 /*--------google_font---------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap");
 
-body{
-    font-family: 'Oswald', sans-serif;
+body {
+  font-family: "Oswald", sans-serif;
+}
+/*----------------Custom non-important hidden class property------------------------------------*/
+.hidden {
+  display: none;
 }
