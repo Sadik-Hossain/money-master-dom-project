@@ -16,9 +16,10 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
+  <!-------------------------------Body Start---------------------------------------------->
   <body>
     <main class="container">
-      <header id="header" class="container my-5">
+      <header id="header" class="container mt-3 mb-4">
         <h1 class="text-center text-success">Calculate Your Money</h1>
       </header>
 
@@ -31,7 +32,6 @@
             </div>
           </div>
         </div>
-
         <!-------------------calculation and input section------------------------------------------->
         <div class="col-md-6">
           <div class="input-section half-width bg-light text-center p-3">
@@ -43,35 +43,35 @@
                 id="validation-msg-1"
                 class="text-danger rounded-pill bg-white p-2 hidden"
               >
-                please enter a number<button
-                  id="close-1"
+                click close & please enter a number!!!<button
                   type="button"
                   class="btn-close position-absolute end-0 mx-3"
                   aria-label="Close"
+                  onclick="msg('validation-msg-1')"
                 ></button>
               </p>
               <p
                 id="validation-msg-2"
                 class="text-danger rounded-pill bg-white p-2 hidden"
               >
-                please enter a positive number
+                click close & please enter a positive number!!!
                 <button
-                  id="close-2"
                   type="button"
                   class="btn-close position-absolute end-0 mx-3"
                   aria-label="Close"
+                  onclick="msg('validation-msg-2')"
                 ></button>
               </p>
               <p
                 id="validation-msg-3"
                 class="text-danger rounded-pill bg-white p-2 hidden"
               >
-                insufficient amount
+                insufficient amount, click close & try again!!!
                 <button
-                  id="close-3"
                   type="button"
                   class="btn-close position-absolute end-0 mx-3"
                   aria-label="Close"
+                  onclick="msg('validation-msg-3')"
                 ></button>
               </p>
             </div>
@@ -105,21 +105,65 @@
             <button id="calculate" class="btn-primary m-3 py-2 px-5 rounded-3">
               Calculate
             </button>
-            <!------------total expense & balance--------------->
+            <!-----------------total expense & balance----------------------------->
             <div class="my-3">
               <h4>Total Expenses: <span id="expenses">00</span></h4>
               <h4>Balance: <span id="balance">00</span></h4>
             </div>
-            <!----------------------saving------------------------------------------>
+            <!----------------------saving section------------------------------------------>
             <div class="my-3">
+              <!----------------------hidden validation ui msg---------------------------->
+              <div class="position-relative rounded-pill bg-white">
+                <p
+                  id="saving-validation-msg-1"
+                  class="text-danger rounded-pill bg-white p-2 hidden"
+                >
+                  click close & please enter a number!!!<button
+                    type="button"
+                    class="btn-close position-absolute end-0 mx-3"
+                    aria-label="Close"
+                    onclick="msg('saving-validation-msg-1')"
+                  ></button>
+                </p>
+                <p
+                  id="saving-validation-msg-2"
+                  class="text-danger rounded-pill bg-white p-2 hidden"
+                >
+                  click close & please enter a positive number!!!
+                  <button
+                    type="button"
+                    class="btn-close position-absolute end-0 mx-3"
+                    aria-label="Close"
+                    onclick="msg('saving-validation-msg-2')"
+                  ></button>
+                </p>
+                <p
+                  id="saving-validation-msg-3"
+                  class="text-danger rounded-pill bg-white p-2 hidden"
+                >
+                  Insufficient balance, can not save the money. Click close & try again!!!
+                  <button
+                    type="button"
+                    class="btn-close position-absolute end-0 mx-3"
+                    aria-label="Close"
+                    onclick="msg('saving-validation-msg-3')"
+                  ></button>
+                </p>
+              </div>
               <p>
-                Save: <input class="mx-3 p-2 w-25" type="text" /> %
-                <button class="btn-primary m-3 py-2 px-5 rounded-3">
+                <!----------------------Saving Input-------------------------------->
+                Save:
+                <input id="saving-input" class="mx-3 p-2 w-25" type="text" /> %
+                <button
+                  id = 'save-btn'
+                  class="btn-primary m-3 py-2 px-5 rounded-3"
+                >
                   Save
                 </button>
               </p>
-              <h4>Saving Amount: <span>00</span></h4>
-              <h4>Remaining Balance: <span>00</span></h4>
+              <!-------------------saving and remaining balance------------------------->
+              <h4>Saving Amount: <span id="saving-amount">00</span></h4>
+              <h4>Remaining Balance: <span id="remaining-balance">00</span></h4>
             </div>
           </div>
         </div>
