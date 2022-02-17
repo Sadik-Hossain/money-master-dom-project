@@ -64,6 +64,8 @@ function calculation(income, food, rent, clothes) {
         document.getElementById("validation-msg-3").style.display = "block";
     }
 }
+
+
 //----------------Saving button event added------------------------------------------------------
 document.getElementById("save-btn").addEventListener("click", function () {
 
@@ -104,7 +106,9 @@ function savingCalculation(saving) {
 
     if (currentRemaining > 0) {
         remainingBalance.innerText = currentRemaining;
-    } else {
+    }
+
+    else {
         document.getElementById("saving-validation-msg-3").style.display = "block";
     }
 }
