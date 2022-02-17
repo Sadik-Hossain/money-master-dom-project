@@ -70,5 +70,4 @@ document.getElementById('close-2').addEventListener('click', function () {
 })
 document.getElementById('close-3').addEventListener('click', function () {
     document.getElementById('validation-msg-3').style.display = 'none';
-
 })
